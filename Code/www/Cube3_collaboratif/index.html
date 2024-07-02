@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header class="header">
+        <img src="./images/Logo_cesi_2022.png" alt="Company Logo" class="logo">
+    </header>
+
+    <div class="background-overlay"></div>
+    <div class="container">
+
+        <h1>Bienvenue</h1>
+
+        <form action="api.php" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="checkbox" id="souvenir" name="souvenir" value="1">
+            <label for="souvenir">Se souvenir de moi</label><br>
+            <input type="checkbox" id="charte" name="charte" value="ok" required>
+            <label for="charte"> J'accepte les conditions de la <a href="https://www.youtube.com/watch?v=LDU_Txk06tM&t=75s" target="_blank">charte informatique</a></label><br>
+            <input type="submit" value="Me connecter">
+        </form>
+
+    </div>
+</body>
+</html>
+
+
+
+<!-- 
+        <div class="input-container">
+            <input type="email" placeholder="prenom.nom@viacesi.fr">
+        </div>
+        <div class="input-container">
+            <input type="password" placeholder="mot de passe">
+        </div>
+        <div class="checkbox-container">
+            <label>
+                <input type="checkbox">
+                Se souvenir de moi
+            </label>
+        </div>
+        <div class="checkbox-container">
+            <label>
+                <input type="checkbox">
+                J'accepte les conditions de la <a href="https://www.youtube.com/watch?v=LDU_Txk06tM&t=75s" target="_blank">charte informatique</a>
+            </label>
+        </div>
+        <button class="btn">Me connecter</button>
+    </div> -->
+
+
+
+</body>
+</html>
