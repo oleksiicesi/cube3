@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CECI - École d'Ingénieurs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="logo.png" alt="CECI - École d'Ingénieurs">
+        </div>
+        <div class="header-time">
+            <span id="current-time">10:33</span>
+        </div>
+        <div class="header-user">
+            <span>Prénom NOM</span>
+            <img src="user-icon.png" alt="User Icon">
+        </div>
+    </header>
+    <main>
+        <section class="presence-section">
+            <div class="date-title">
+                <h2>Lundi 7 juillet 2024</h2>
+                <div class="hour-select">
+                    <label for="hour">Créneau en cours :</label>
+                    <select id="hour" name="hour">
+                        <option value="08:00-12:30">Lundi 7 juillet 2024, 08:00 - 12:30</option>
+                        <option value="13:00-16:30">Lundi 7 juillet 2024, 13:00 - 16:30</option>
+                    </select>
+                </div>
+                <div class="presence-status">
+                    <span>Présence pas signalée</span>
+                    <form action="presence.php" method="POST">
+                        <input type="hidden" name="user_id" value="1">
+                        <button type="submit" id="presence-button">Je suis présent</button>
+                    </form>
+                </div>
+            </div>
+            <table class="presence-table">
+                <thead>
+                    <tr>
+                        <th>Prénom NOM</th>
+                        <th>Présence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Prénom NOM</td>
+                        <td>
+                            <select>
+                                <option value="present">Présent</option>
+                                <option value="absent">Absent</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Prénom NOM</td>
+                        <td>
+                            <select>
+                                <option value="present">Présent</option>
+                                <option value="absent">Absent</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- Repeat rows as needed -->
+                </tbody>
+            </table>
+        </section>
+        <section class="other-dates">
+            <ul>
+                <li>Mardi 8 juillet 2024</li>
+                <li>Vendredi 9 juillet 2024</li>
+                <li>Mercredi 10 juillet 2024</li>
+                <li>Jeudi 11 juillet 2024</li>
+            </ul>
+        </section>
+    </main>
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours().toString().padStart(2, '0');
+            var minutes = now.getMinutes().toString().padStart(2, '0');
+            var timeString = hours + ':' + minutes;
+            
+            document.getElementById('current-time').textContent = timeString;
+        }
+
+        setInterval(updateTime, 1000); // Met à jour l'heure toutes les secondes
+        updateTime(); // Met à jour immédiatement l'heure à la chargement de la page
+    </script>
+</body>
+</html>
